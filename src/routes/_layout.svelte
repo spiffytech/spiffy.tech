@@ -20,3 +20,7 @@
 <main>
 	<slot></slot>
 </main>
+
+<footer>
+    <a href="/pages" style="visibility: hidden">Pages</a>
+</footer>

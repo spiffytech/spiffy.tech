@@ -3,15 +3,30 @@ backend:
   branch: master
 media_folder: "static/uploads"
 public_folder: "/uploads"
+publish_mode: editorial_workflow
+site_url: https://spiffy.tech
 
 collections:
   - name: blog
     label: Blog
-    folder: static/blog_posts
+    folder: static/_posts
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: static/_pages
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
