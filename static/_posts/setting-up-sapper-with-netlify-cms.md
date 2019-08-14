@@ -16,6 +16,7 @@ We'll be following the directions from [Netlify's website](https://www.netlifycm
 ```
 npx degit "sveltejs/sapper-template#webpack" my-site
 cd my-site
+npm install
 ```
 
 2. Go ahead and commit and push this to Github so you can create your Netlify project:
@@ -83,7 +84,7 @@ public_folder: /uploads # The src attribute for uploaded media will begin with /
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
-    folder: "static/_posts/blog" # The path to the folder where the documents are stored
+    folder: "static/_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
@@ -189,7 +190,7 @@ export async function get(req, res) {
     }),
   );
 
-  // Sort by reverse datea, because ait's a blog                                                                                                                                                                                                                                            
+  // Sort by reverse date, because it's a blog
   postsFrontMatter.sort((a, b) => (a.date < b.date ? 1 : -1));
 
   res.writeHead(200, {
@@ -237,3 +238,7 @@ Next, open `src/routes/blog/[slug].svelte` and replace the entire `<script>` blo
   };
 </script>
 ```
+
+## Success part 2!
+
+You can now run `npm run export` and see that your test post was created! If you commit and push your changes, Netlify will build and publish your site!
