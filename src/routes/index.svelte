@@ -30,8 +30,8 @@
 </svelte:head>
 
 {#each posts as post}
-  <article>
-    <a href={`blog/${post.slug}`}><heading>{post.title}</heading></a>
+  <article class="p-5 mb-5 shadow rounded-lg bg-cover" style={`background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("${post.thumbnail}")`}>
+    <a href={`blog/${post.slug}`}><heading class="font-bold text-2xl">{post.title}</heading></a>
     <p>{post.excerpt}</p>
   </article>
 {/each}

@@ -16,6 +16,8 @@
   import fm from 'front-matter';
   import MarkdownIt from 'markdown-it';
 
+  import Newsletter from '../../components/Newsletter.svelte';
+
   export let postMd;
 
   const md = new MarkdownIt();
@@ -72,3 +74,5 @@
 <div class="content">
   {@html post.html}
 </div>
+
+<Newsletter />
