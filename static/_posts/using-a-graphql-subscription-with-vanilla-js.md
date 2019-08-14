@@ -6,7 +6,7 @@ excerpt: >-
   Here's a lightweight way to make GraphQL queries that supports subscriptions,
   without heavy client libraries.
 ---
-I was looking for a way to use GraphQL subscriptions without Apollo, Relay, urql, or any other heavy libraries or frameworks that were locked to React. It turns out you can use Apollo's `subscriptinos-transport-ws` library by itself, without the rest of the framework. You can use it for both Subscriptions and for Query/Mutation.
+I was looking for a way to use GraphQL subscriptions without Apollo, Relay, urql, or any other heavy libraries or frameworks that were locked to React. It turns out you can use Apollo's `subscriptions-transport-ws` library by itself, without the rest of the framework. You can use it for both Subscriptions and for Query/Mutation.
 
 Here's an example of making an authenticated GraphQL subscription request:
 
