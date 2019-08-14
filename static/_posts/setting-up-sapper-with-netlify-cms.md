@@ -8,15 +8,18 @@ excerpt: >-
 ---
 We'll be following the directions from [Netlify's website](https://www.netlifycms.org/docs/add-to-your-site/).
 
-# The Basics
+# Prepare your workspace
 
 1. Create your project by cloning the Sapper template project
+
 
 ```
 npx degit "sveltejs/sapper-template#webpack" my-site
 cd my-site
 ```
+
 2. Go ahead and commit and push this to Github so you can create your Netlify project:
+
 
 ```
 git init
@@ -26,12 +29,29 @@ git remote add origin git@github.com:spiffytech/sapper-netlify-cms-starter.git
 git push
 ```
 
-3. Go to Netlify and create a project:
+# Go to Netlify and create a project
 
+![New site from Git](/uploads/screenshot-2019-08-14-at-18.19.49.png "Click the button to create a new site from a Git repo")
 
-2. Install the Netlify CMS code
+Click the button to create a new site from a Git repo.
 
-Create the directory `static/admin` and create `index.html` inside it:
+![github](/uploads/screenshot-2019-08-14-at-18.19.57.png "Use Github as the source for your project. Netlify CMS only supports Github at this time.")
+
+Use Github as the source for your project. Netlify CMS only supports Github at this time.
+
+![project](/uploads/screenshot-2019-08-14-at-18.20.21.png "Select the repo you created in Github")
+
+Select the repo you created in Github
+
+![configure the app](/uploads/screenshot-2019-08-14-at-18.21.45.png "Configure your build process. Set the build command to generate the static Sapper site, and the publish directory to the directory where Sapper exports to.")
+
+Configure your build process. Set the build command to generate the static Sapper site, and the publish directory to the directory where Sapper exports to.
+
+# Install the Netlify CMS code
+
+Back in your workspace it's time to add the Netlify CMS code to our project.
+
+1. Create the directory `static/admin` and create `index.html` inside it. This file contains the code that bootstraps the Netlify CMS.
 
 ```html
 <!doctype html>
@@ -48,7 +68,7 @@ Create the directory `static/admin` and create `index.html` inside it:
 </html>
 ```
 
-3. Configure Netlify for your project
+2. Configure Netlify for your project
 
 Edit `static/admin/config.yml` and add the following:
 
@@ -73,10 +93,13 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
 ```
 
-4. Set up Netlify authentication
+# Set up Netlify authentication
 
-  * Follow [Netlify's directions](https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway) to activate Identity and connect your git account to your Netlify project
-  * We need to add the Netlify Identity code to both our admin page (so we can log in) and our main site (so it can redirect us back to the admin after we log in).
+We'll want to use Netlify's authentication service -- called "Identity" -- so that our CMS can authenticate with Netlify and use its APIs to publish content to our Git repo.
+
+1. Follow [Netlify's directions](https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway) to activate Identity and connect your git account to your Netlify project
+
+2. We need to add the Netlify Identity code to both our admin page (so we can log in) and our main site (so it can redirect us back to the admin after we log in).
 
 Take this snippet: `<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>`
 
@@ -106,7 +129,8 @@ Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
 +   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 ```
-  * You'll also need to add this snippet to the top of your `src/routes/index.svelte`:
+
+3. You'll also need to add this snippet to the top of your `src/routes/index.svelte`:
 
 ```
 <script>
@@ -125,3 +149,6 @@ Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
   });
 </script>
 ```
+
+# Success part 1!
+If you commit and push your code, then wait for Netlify to deploy it, you should be able to visit your admin site (like https://awesome-bose-294ddb.netlify.com/admin), log in, and create a post! You won't see it on your published site yet, though -- Sapper still doesn't know anything about the Netlify CMS content.
