@@ -35,5 +35,7 @@
   </script>
 </svelte:head>
 
-<a href="/blog/rss.xml">RSS</a>
-<Posts {posts} />
+<div class="relative">
+  <a href="/blog/rss.xml"><img src="/images/rss.png" alt="rss" class="w-8 h-8 absolute right-0" /></a>
+  <Posts {posts} />
+</div>
