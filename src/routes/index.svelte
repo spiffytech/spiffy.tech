@@ -35,4 +35,5 @@
   </script>
 </svelte:head>
 
+<a href="/blog/rss.xml">RSS</a>
 <Posts {posts} />
