@@ -97,7 +97,7 @@ collections:
 
 We'll want to use Netlify's authentication service -- called "Identity" -- so that our CMS can authenticate with Netlify and use its APIs to publish content to our Git repo.
 
-1. Follow [Netlify's directions](https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway) to activate Identity and connect your git account to your Netlify project
+1. Follow [Netlify's directions](https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway) to activate Identity and connect your git account to your Netlify project. Also, invite yourself as a user to the project.
 
 2. We need to add the Netlify Identity code to both our admin page (so we can log in) and our main site (so it can redirect us back to the admin after we log in).
 
@@ -152,3 +152,88 @@ Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
 
 # Success part 1!
 If you commit and push your code, then wait for Netlify to deploy it, you should be able to visit your admin site (like https://awesome-bose-294ddb.netlify.com/admin), log in, and create a post! You won't see it on your published site yet, though -- Sapper still doesn't know anything about the Netlify CMS content.
+
+# Tell Sapper about blog posts
+
+Here's where the real work comes in. Sapper, out of the box, reads posts from a rather unwieldy _posts.json file. We're going to replace that with reading from Markdown files that Netlify CMS creates in our repo. 
+
+## Install dependencies
+
+You'll need to install a few packages for managing the markdown files:
+
+`npm install mz glob markdown-it front-matter`
+
+## Update the index of blog content
+Open `src/routes/blog/index.json.js` and replace the entire file with this:
+
+```javascript
+import fm from 'front-matter';
+import glob from 'glob';
+import {fs} from 'mz';
+import path from 'path';
+
+export async function get(req, res) {
+  // List the Markdown files and return their filenames
+  const posts = await new Promise((resolve, reject) =>
+      glob('static/_posts/*.md', (err, files) => {
+      if (err) return reject(err);
+      return resolve(files);
+    }),
+  );
+
+  // Parse out the metadata from the files
+  const postsFrontMatter = await Promise.all(
+    posts.map(async post => {
+      const content = (await fs.readFile(post)).toString();
+      return {...fm(content).attributes, slug: path.parse(post).name};
+    }),
+  );
+
+  // Sort by reverse datea, because ait's a blog                                                                                                                                                                                                                                            
+  postsFrontMatter.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  res.writeHead(200, {
+    'Content-Type': 'application/json',
+  });
+
+  res.end(JSON.stringify(postsFrontMatter));
+}
+```
+
+## Edit the per-post code
+
+First off, we don't need the server route for fetching posts anymore, since they're just public files in our `static/_posts/` folder. So remove that code:
+`rm [slug].json.js`
+
+Next, open `src/routes/blog/[slug].svelte` and replace the entire `<script>` block with this code:
+
+```html
+<script context="module">                                                                                                                                                                                                                                                                   
+  export async function preload({ params, query }) {
+    // the `slug` parameter is available because
+    // this file is called [slug].svelte
+    const res = await this.fetch(`_posts/${params.slug}.md`);
+
+    if (res.status === 200) {
+      return { postMd: await res.text() };
+    } else {
+      this.error(res.status, data.message);
+    }
+  }
+</script>
+
+<script>
+  import fm from 'front-matter';
+  import MarkdownIt from 'markdown-it';
+
+  export let postMd;
+
+  const md = new MarkdownIt();
+
+  $: frontMatter = fm(postMd);
+  $: post = {
+    ...frontMatter.attributes,
+    html: md.render(frontMatter.body)
+  };
+</script>
+```
