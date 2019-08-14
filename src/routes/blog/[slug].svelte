@@ -22,11 +22,11 @@
 
   export let postMd;
 
-	afterUpdate(() => {
+  afterUpdate(() => {
     document.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });
-	});
+  });
 
   const md = new MarkdownIt();
 
@@ -53,10 +53,11 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
 </svelte:head>
 
-<h1 class="font-bold text-3xl mb-5">{post.title}</h1>
+<h1 class="p-5 shadow rounded-lg mb-5 font-bold text-3xl bg-cover" style={`background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("${post.thumbnail}")`}>{post.title}</h1>
 
-<div class="content">
+<section class="content p-5 shadow rounded-lg" style={`background: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)), url("${post.thumbnail}")`}>
   {@html post.html}
-</div>
 
-<Newsletter />
+  <Newsletter />
+</section>
+
