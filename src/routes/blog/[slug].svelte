@@ -51,6 +51,7 @@
 <svelte:head>
   <title>{post.title}</title>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
+  <meta name="description" content={post.excerpt} />
 </svelte:head>
 
 <h1 class="p-5 shadow rounded-lg mb-5 font-bold text-3xl bg-cover" style={`background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("${post.thumbnail}")`}>{post.title}</h1>
