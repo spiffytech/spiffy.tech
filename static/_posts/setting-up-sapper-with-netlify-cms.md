@@ -16,6 +16,18 @@ We'll be following the directions from [Netlify's website](https://www.netlifycm
 npx degit "sveltejs/sapper-template#webpack" my-site
 cd my-site
 ```
+2. Go ahead and commit and push this to Github so you can create your Netlify project:
+
+```
+git init
+git add .
+git commit -am "Degit'd the Sapper starter project"
+git remote add origin git@github.com:spiffytech/sapper-netlify-cms-starter.git
+git push
+```
+
+3. Go to Netlify and create a project:
+
 
 2. Install the Netlify CMS code
 
