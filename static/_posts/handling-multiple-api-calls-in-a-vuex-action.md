@@ -11,7 +11,7 @@ Do you find yourself making more than one API call in your Vuex actions? Wonderi
 # The issue
 Here's some example code where you may want to load all posts and all post categories:
 
-```
+```javascript
 fetchPosts({commit}) {
     commit('setLoadStatus', 'loading');
     axios.get('/posts').then((response) => {
@@ -31,7 +31,7 @@ Can you see the issue here? You only want to proceed with commits if BOTH the fi
 # The solution
 The solution is to use `Promise.all` so you only `commit` after all of the API calls are finished:
 
-```
+```javascript
 fetchPosts({commit}) {
     Promise.all([
         axios.get('/posts').then((response) => response.data),

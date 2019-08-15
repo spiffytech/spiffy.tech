@@ -6,7 +6,7 @@ excerpt: >-
   Are you having trouble understanding nested for loops in JavaScript? Just
   can't get it into your head? Here's how they work.
 ---
-```
+```javascript
 for (let outer = 0; outer < 3; outer += 1) {
     for (let inner = 0; inner < 3; inner += 1) {
         console.log('outer:', outer, 'inner:', inner);

@@ -9,7 +9,7 @@ excerpt: >-
 # The issue
 Say you have a method which receives an array, and you use Lodash's `_.reduce` to check each item one by one. But `_.reduce` is returning `undefined`. Here's an example:
 
-```
+```javascript
 console.log(
 	_.reduce(
   	[{toBeCounted: 1}, {toBeCounted: 0}],
@@ -29,7 +29,7 @@ console.log(
 # The fix
 When you use `_.reduce` (or the ES6 `Array.prototype.reduce`), you must _always_ return a value from your reducer function. Here's the corrected code:
 
-```
+``javascript
 console.log(
 	_.reduce(
   	[{toBeCounted: 1}, {toBeCounted: 0}],

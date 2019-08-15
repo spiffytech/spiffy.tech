@@ -36,10 +36,10 @@ Let's get started!
 
 Start your project by cloning the Sapper template git repository.
 
-```
-npx degit "sveltejs/sapper-template#webpack" my-site
-cd my-site
-npm install
+```shell
+$ npx degit "sveltejs/sapper-template#webpack" my-site
+$ cd my-site
+$ npm install
 ```
 
 ### Commit that project
@@ -48,12 +48,12 @@ Go ahead and commit and push this to Github so you can create your Netlify proje
 
 Create a new repository on Github, and substitute that URL in the fourth command.
 
-```
-git init
-git add .
-git commit -am "Degit'd the Sapper starter project"
-git remote add origin <your github project URL here>
-git push
+```shell
+$ git init
+$ git add .
+$ git commit -am "Degit'd the Sapper starter project"
+$ git remote add origin <your github project URL here>
+$ git push
 ```
 
 ## Go to Netlify and create a project
@@ -140,7 +140,7 @@ Take this snippet: `<script src="https://identity.netlify.com/v1/netlify-identit
 
 And add it to the head section of your `static/admin/index.html`:
 
-```
+```html
 <!doctype html>
 <html>
 <head>
@@ -158,7 +158,7 @@ And add it to the head section of your `static/admin/index.html`:
 
 Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
 
-```
+```html
 <svelte:head>
     <title>Sapper project template</title>
 +   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -167,7 +167,7 @@ Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
 
 3. You'll also need to add this snippet to the top of your `src/routes/index.svelte`:
 
-```
+```html
 <script>
   import { onMount } from 'svelte';
 
@@ -189,10 +189,10 @@ Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
 
 Commit and push your code.
 
-```
-git add .
-git commit -am "Configured the site to run the Netlify CMS"
-git push
+```shell
+$ git add .
+$ git commit -am "Configured the site to run the Netlify CMS"
+$ git push
 ```
 
 Wait for Netlify to deploy it, then visit your admin site (the URL will be your Netlify site + `/admin`, like https://awesome-bose-294ddb.netlify.com/admin), log in, and create a post! You won't see the post on your published site yet -- Sapper still doesn't know anything about the Netlify CMS content. Let's fix that!
@@ -262,9 +262,9 @@ Next up, we need to update our Svelte component to fetch the Markdown files inst
 
 Sapper provides a server route for extracting post content from the `_posts.js` file. Since we're not using that file, we need neither the file nor the server route. remove both:
 
-```
-cd src/routes/blog
-rm _posts.js [slug].json.js
+```shell
+$ cd src/routes/blog
+$ rm _posts.js [slug].json.js
 ```
 
 ### Render markdown posts
@@ -319,19 +319,19 @@ Our site now works! You can see it for yourself by running `npm run dev` and vis
 
 If you want to verify your site exports correctly before committing and sending it to Netlify, you can do this:
 
-```
-npm run export
-npx serve __sapper__/export
+```shell
+$ npm run export
+$ npx serve __sapper__/export
 ```
 
 if the export command didn't produce any `500` messages, visit http://localhost:5000, click around and confirm that everything works like you expect.
 
 ### Send it to Netlify
 
-```
-git add .
-git commit -am "Configured the site to read and publish markdown blog posts"
-git push
+```shell
+$ git add .
+$ git commit -am "Configured the site to read and publish markdown blog posts"
+$ git push
 ```
 
 After waiting for Netlify to publish your site, you can visit your site and see the glorious blog post you created earlier!
