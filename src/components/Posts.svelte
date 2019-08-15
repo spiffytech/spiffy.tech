@@ -6,7 +6,7 @@
   <a rel="prefetch" href={`blog/${post.slug}`}>
     <article
       class="p-5 mb-5 shadow-md rounded-lg bg-cover text-white"
-      style={`background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("${post.thumbnail}")`}>
+      style={`background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url("${post.thumbnail}")`}>
       <heading class="font-bold text-2xl">{post.title}</heading>
       <p>{post.excerpt}</p>
     </article>
