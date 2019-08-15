@@ -5,9 +5,6 @@
 </script>
 
 <style>
-	main {
-		flex-basis: 56rem;
-	}
 </style>
 
 <div class="flex w-full bg-cover flex-col items-center"
@@ -15,7 +12,7 @@
 
   <Nav {segment}/>
 
-    <main style="max-width: 56rem;">
+  <main class="w-5/6 md:w-3/4 lg:w-2/3">
       <slot></slot>
     </main>
 
