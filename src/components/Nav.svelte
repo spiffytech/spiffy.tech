@@ -12,5 +12,8 @@
     <li class="float-left mx-3">
       <a class={segment === 'about' ? 'selected' : ''} href="about">about</a>
     </li>
+    <li class="float-left mx-3">
+      <a class={segment === 'about' ? 'selected' : ''} href="mailto:hello@spiffy.tech?subject=Hello!&body=">drop me a line</a>
+    </li>
   </ul>
 </nav>
