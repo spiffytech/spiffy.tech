@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>spiffy.tech</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 
   </script>

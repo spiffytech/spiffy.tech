@@ -38,14 +38,30 @@
 </script>
 
 <style>
-	.content :global(h1) {
-	font-weight: 700;
-	font-size: 1.5rem;
-}
+  .content :global(h1), .content :global(h2), .content :global(h3), .content :global(h4), .content :global(h5), .content :global(h6) {
+    font-weight: 700;
+  }
 
-.content :global(*) {
-	margin-bottom: 1.25rem;
-}
+  .content :global(h1) {
+    font-size: 1.875rem;
+  }
+  .content :global(h2) {
+    font-size: 1.5rem;
+  }
+  .content :global(h3) {
+    font-size: 1.25rem;
+  }
+  .content :global(h4) {
+    font-size: 1.125rem;
+  }
+
+  .content :global(*) {
+    margin-bottom: 1.25rem;
+  }
+
+  .content :global(img), .content :global(code) {
+    border-radius: 0.5rem;
+  }
 </style>
 
 <svelte:head>
