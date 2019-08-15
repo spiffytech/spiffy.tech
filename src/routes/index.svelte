@@ -35,6 +35,7 @@
   </script>
 </svelte:head>
 
+<!-- This div is here so we can position our RSS icon -->
 <div class="relative">
   <a href="/blog/rss.xml"><img src="/images/rss.png" alt="rss" class="w-8 h-8 absolute right-0" /></a>
   <Posts {posts} />

@@ -6,21 +6,20 @@
 
 <style>
 	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
+		flex-basis: 56rem;
 	}
 </style>
 
-<Nav {segment}/>
+<div class="flex w-full bg-cover flex-col items-center"
+  style={`background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("/images/carbon.png")`}>
 
-<main>
-	<slot></slot>
-</main>
+  <Nav {segment}/>
 
-<footer>
-    <a href="/pages" style="visibility: hidden">Pages</a>
-</footer>
+    <main style="max-width: 56rem;">
+      <slot></slot>
+    </main>
+
+  <footer>
+      <a href="/pages" style="visibility: hidden">Pages</a>
+  </footer>
+</div>

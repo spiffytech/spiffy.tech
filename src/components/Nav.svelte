@@ -2,7 +2,7 @@
   export let segment;
 </script>
 
-<nav class="flex items-center">
+<nav class="flex items-center text-white self-start mb-5 w-full" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))">
   <heading class="font-bold text-2xl float-left mx-3">spiffy.tech</heading>
 
   <ul>
