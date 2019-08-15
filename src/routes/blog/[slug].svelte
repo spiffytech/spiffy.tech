@@ -59,8 +59,10 @@
     margin-bottom: 1.25rem;
   }
 
-  .content :global(img), .content :global(code) {
+  .content :global(img), .content :global(pre) :global(code) {
     border-radius: 0.5rem;
+    border-color: #a0aec0;
+    border-width: 2px;
   }
 </style>
 
@@ -70,9 +72,9 @@
   <meta name="description" content={post.excerpt} />
 </svelte:head>
 
-<h1 class="p-5 shadow rounded-lg mb-5 font-bold text-3xl bg-cover" style={`background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("${post.thumbnail}")`}>{post.title}</h1>
+<h1 class="p-5 shadow rounded-lg mb-5 font-bold text-3xl bg-cover border-2 border-gray-500" style={`background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("${post.thumbnail}")`}>{post.title}</h1>
 
-<section class="content p-5 shadow rounded-lg" style={`background: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)), url("${post.thumbnail}")`}>
+<section class="content p-5 shadow rounded-lg border-2 border-gray-500" style={`background: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)), url("${post.thumbnail}")`}>
   {@html post.html}
 
   <Newsletter />
