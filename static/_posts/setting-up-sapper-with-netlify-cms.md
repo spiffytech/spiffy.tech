@@ -6,11 +6,11 @@ excerpt: >-
   You can create a static site with a web-based CMS using Netlify and Sapper,
   hosted for free!
 ---
-# What are these things?
+# What are Sapper and Netlify CMS?
 
 ## Sapper
 
-Sapper is Svelte's answer to Next.js/Nuxt.js. It's a way of rendering Svelte code on the server so your site is compatible with JavaScript-free devices, and renders immediately instead of waiting for a JS blob to download, parse, and run.
+Sapper is Svelte's answer to Next.js/Nuxt.js. It's a way of rendering Svelte code on the server so your site is compatible with JavaScript-free devices, and so it renders immediately instead of waiting for a JS blob to download, parse, and run.
 
 Sapper ordinarily runs as a full server application, but using the `sapper export` command we can generate a static version of our site that we can host on Github Pages or, in this case, Netlify. That's a great way to have a very fast site that's free for small-to-medium traffic numbers.
 
