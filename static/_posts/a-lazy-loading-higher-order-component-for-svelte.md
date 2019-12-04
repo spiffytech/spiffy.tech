@@ -6,7 +6,7 @@ excerpt: >-
   I show how to lazy-load content in Svelte by wrapping your lazy content inside
   a component that detects when it's visible
 ---
-Recently, while building a simple Reddit clone, I wanted to lazy-load images and comments. That is, rather that loading all of the images and comments the instant I added a component to the DOM, I wanted to wait until the component was actually visible. This spreads out the impact of loading a page, both for the client and the server.
+  Recently, while building a simple Reddit clone, I wanted to lazy-load images and comments. That is, rather that loading all of the images and comments the instant I added a component to the DOM, I wanted to wait until the component was actually visible. This spreads out the impact of loading a page, both for the client and the server.
 
 To do this, I used the `IntersectionObserver` API to create a higher-order Svelte component:
 
@@ -28,6 +28,8 @@ To do this, I used the `IntersectionObserver` API to create a higher-order Svelt
       hasBeenVisible = hasBeenVisible || visible;
     });
     observer.observe(el);
+
+    return () => observer.unobserve(el);
   });
 </script>
 
