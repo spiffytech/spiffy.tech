@@ -64,4 +64,4 @@ So how do we use this component?
 
 We import the `VisibilityGuard` component and use it to wrap our image. The `let:hasBeenVisible` directive declares a new variable that comes from our higher-order component, and we use that to determine whether to display our image (by setting or not setting a `src` attribute).
 
-And that's that! Here's a REPL of this in action: https://svelte.dev/repl/d19802ee38b84436824f4daccea9d307?version=3.16.0
+And that's that! [Here's a REPL of this in action](https://svelte.dev/repl/d19802ee38b84436824f4daccea9d307?version=3.16.0).
