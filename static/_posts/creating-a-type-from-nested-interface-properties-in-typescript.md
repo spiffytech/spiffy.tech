@@ -8,7 +8,7 @@ While at work I was upgrading [graphql-code-generator](https://graphql-code-gene
 
 To solve this, I created a new type by reading attributes from deep in the response type.
 
-```
+```typescript
 interface Foo {
     bar: {
         baz: {
