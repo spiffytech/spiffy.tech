@@ -21,3 +21,5 @@ interface Foo {
 
 type zoop = Foo['bar']['baz']['zap'][number]['zoop'];
 ```
+
+If some of your properties are optional, you can use `Required<T>`. If they're possibly `undefined`, use `Exclude<T, undefined>`.
