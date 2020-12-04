@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
-    "export": "tailwind build tailwind.css -o static/global.css; sapper export",
+    "export": "sapper export",
+    "postinstall": "npm run tailwind",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
+    "tailwind": "tailwind build tailwind.css -o static/global.css",
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
