@@ -1,6 +1,4 @@
 <script>
-  import geopattern from 'geopattern';
-
   export let posts;
 </script>
 
