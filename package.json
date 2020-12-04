@@ -13,23 +13,23 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "front-matter": "^3.0.2",
-    "glob": "^7.1.4",
+    "front-matter": "^3.2.1",
+    "glob": "^7.1.6",
     "markdown-it": "^9.1.0",
     "mz": "^2.7.0",
-    "polka": "next",
+    "polka": "^1.0.0-next.11",
     "rss": "^1.2.2",
-    "sirv": "^0.4.0",
-    "tailwindcss": "^1.1.2"
+    "sirv": "^0.4.6",
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
-    "highlight.js": "^9.15.9",
+    "highlight.js": "^9.18.5",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "prettier-plugin-svelte": "^0.7.0",
     "sapper": "^0.28.10",
     "svelte": "^3.31.0",
     "svelte-loader": "^2.9.0",
-    "webpack": "^4.7.0"
+    "webpack": "^4.44.2"
   }
 }
