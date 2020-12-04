@@ -1,7 +1,7 @@
 ---
 title: Lodash _.reduce returning undefined
 date: 2019-02-08T17:01:03.225Z
-thumbnail: /uploads/holger-link-xfko2aakc3a-unsplash.jpg
+thumbnail: /uploads/holger-link-xfko2aakc3a-unsplash.webp
 excerpt: >-
   Say you're using Lodash's _.reduce method to check each item in an array, but
   it's returning 'undefined'. Here's the fix!

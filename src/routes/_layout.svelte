@@ -8,7 +8,7 @@
 </style>
 
 <div class="flex w-full bg-cover flex-col items-center"
-  style={`background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("/images/carbon.png")`}>
+  style={`background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("/images/carbon.webp")`}>
 
   <Nav {segment}/>
 

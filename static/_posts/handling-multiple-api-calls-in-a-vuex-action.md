@@ -1,7 +1,7 @@
 ---
 title: Handling multiple API calls in a Vuex action
 date: 2019-02-07T16:57:24.482Z
-thumbnail: /uploads/fezbot2000-gwhs2pim_u-unsplash.jpg
+thumbnail: /uploads/fezbot2000-gwhs2pim_u-unsplash.webp
 excerpt: >-
   Do you find yourself making more than one API call in your Vuex actions?
   Wondering the best way to handle this situation? Read on for a fix!

@@ -1,7 +1,7 @@
 ---
 title: A Minimal Svelte Router
 date: 2019-07-12T16:05:41.950Z
-thumbnail: /uploads/javier-allegue-barros-c7b-exxpoie-unsplash.jpg
+thumbnail: /uploads/javier-allegue-barros-c7b-exxpoie-unsplash.webp
 excerpt: Here is a minimal router for Svelte v3 using Page.js.
 ---
 Here is a minimal router for Svelte v3 using Page.js.

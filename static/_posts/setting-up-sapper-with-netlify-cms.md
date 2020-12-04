@@ -1,7 +1,7 @@
 ---
 title: Setting up Sapper with Netlify CMS
 date: 2019-08-14T21:45:54.873Z
-thumbnail: /uploads/todd-quackenbush-XBxQZLNBM0Q-unsplash.jpg
+thumbnail: /uploads/todd-quackenbush-XBxQZLNBM0Q-unsplash.webp
 excerpt: >-
   You can create a static site with a web-based CMS using Netlify and Sapper,
   hosted for free!
@@ -60,19 +60,19 @@ $ git push
 
 Now that we have a barebones Sapper project in Git, it's time to tell Netlify that we'd like to host that project. Sign up at Netlify.com and begin creating your new Netlify project.
 
-![New site from Git](/uploads/screenshot-2019-08-14-at-18.19.49.png "Click the button to create a new site from a Git repo")
+![New site from Git](/uploads/screenshot-2019-08-14-at-18.19.49.webp "Click the button to create a new site from a Git repo")
 
 Click the button to create a new site from a Git repo.
 
-![github](/uploads/screenshot-2019-08-14-at-18.19.57.png "Use Github as the source for your project. Netlify CMS only supports Github at this time.")
+![github](/uploads/screenshot-2019-08-14-at-18.19.57.webp "Use Github as the source for your project. Netlify CMS only supports Github at this time.")
 
 Use Github as the source for your project. Netlify CMS only supports Github at this time.
 
-![project](/uploads/screenshot-2019-08-14-at-18.20.21.png "Select the repo you created in Github")
+![project](/uploads/screenshot-2019-08-14-at-18.20.21.webp "Select the repo you created in Github")
 
 Select the repo you created in Github
 
-![configure the app](/uploads/screenshot-2019-08-14-at-18.21.45.png "Configure your build process. Set the build command to generate the static Sapper site, and the publish directory to the directory where Sapper exports to.")
+![configure the app](/uploads/screenshot-2019-08-14-at-18.21.45.webp "Configure your build process. Set the build command to generate the static Sapper site, and the publish directory to the directory where Sapper exports to.")
 
 Configure your build process. Set the build command to generate the static Sapper site, and the publish directory to the directory where Sapper exports to.
 

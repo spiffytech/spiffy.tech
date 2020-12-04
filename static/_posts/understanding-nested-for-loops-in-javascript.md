@@ -1,7 +1,7 @@
 ---
 title: Understanding nested for loops in JavaScript
 date: 2019-05-12T16:03:09.640Z
-thumbnail: /uploads/priscilla-du-preez-fosina4f7qm-unsplash.jpg
+thumbnail: /uploads/priscilla-du-preez-fosina4f7qm-unsplash.webp
 excerpt: >-
   Are you having trouble understanding nested for loops in JavaScript? Just
   can't get it into your head? Here's how they work.

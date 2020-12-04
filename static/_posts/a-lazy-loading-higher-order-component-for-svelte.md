@@ -1,7 +1,7 @@
 ---
 title: A lazy-loading higher-order component for Svelte
 date: 2019-12-04T01:25:46.950Z
-thumbnail: /uploads/kate-stone-matheson-uy5t-cjuik4-unsplash.jpg
+thumbnail: /uploads/kate-stone-matheson-uy5t-cjuik4-unsplash.webp
 excerpt: >-
   I show how to lazy-load content in Svelte by wrapping your lazy content inside
   a component that detects when it's visible

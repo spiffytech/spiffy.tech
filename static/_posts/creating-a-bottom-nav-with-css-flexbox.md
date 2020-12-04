@@ -1,7 +1,7 @@
 ---
 title: Creating a bottom nav with CSS Flexbox
 date: 2019-10-01T00:34:13.696Z
-thumbnail: /uploads/jez-timms-hc9opzxkugg-unsplash.jpg
+thumbnail: /uploads/jez-timms-hc9opzxkugg-unsplash.webp
 excerpt: How to create a bottom nav with just Flexbox and pure CSS
 ---
 I needed to create a bottom nav (like what's used in many mobile apps) in CSS. Here's how I did it:
