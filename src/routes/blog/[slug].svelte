@@ -16,22 +16,27 @@
   import fm from 'front-matter';
   import hljs from 'highlight.js';
   import MarkdownIt from 'markdown-it';
-  import {afterUpdate} from 'svelte';
 
   import Newsletter from '../../components/Newsletter.svelte';
 
   export let postMd;
 
-  afterUpdate(() => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  });
+  const md = new MarkdownIt({
+    highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `<pre><code class="language-${lang} hljs">` +
+               hljs.highlight(lang, str, true).value +
+               '</code></pre>';
+      } catch (__) {}
+    }
+ 
+    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+  }
+});;
 
-  const md = new MarkdownIt();
-
-  $: frontMatter = fm(postMd);
-  $: post = {
+  const frontMatter = fm(postMd);
+  const post = {
     ...frontMatter.attributes,
     html: md.render(frontMatter.body)
   };
@@ -72,9 +77,9 @@
   <meta name="description" content={post.excerpt} />
 </svelte:head>
 
-<h1 class="p-5 shadow rounded-lg mb-5 font-bold text-3xl bg-cover shadow-md text-white" style={`background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url("${post.thumbnail}")`}>{post.title}</h1>
+<h1 class="p-5 shadow rounded-lg mb-5 font-bold text-3xl bg-cover shadow-md text-white" style={`background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url("${post.thumbnail}")`}>{post.title}</h1>
 
-<section class="content p-5 shadow rounded-lg shadow-md text-white" style={`background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("${post.thumbnail}")`}>
+<section class="content p-5 shadow rounded-lg shadow-md text-white bg-cover" style={`background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("${post.thumbnail}")`}>
   {@html post.html}
 
   <Newsletter />
