@@ -1,5 +1,5 @@
 ---
-title: Using a GraphQL Subscription with Vanilla JS
+title: GraphQL Subscriptions with Vanilla JS
 date: 2019-07-22T16:07:27.674Z
 thumbnail: /uploads/isaac-smith-at77q0njnt0-unsplash.webp
 excerpt: Here's a lightweight way to make GraphQL queries that supports
