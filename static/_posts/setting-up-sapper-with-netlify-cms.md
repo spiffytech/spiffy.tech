@@ -156,15 +156,6 @@ And add it to the head section of your `static/admin/index.html`:
 </html>
 ```
 
-Also add it to the `<svelte:head>` section of your `src/routes/index.svelte`:
-
-```html
-<svelte:head>
-    <title>Sapper project template</title>
-+   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</svelte:head>
-```
-
 3. You'll also need to add this snippet to the top of your `src/routes/index.svelte`:
 
 ```html
